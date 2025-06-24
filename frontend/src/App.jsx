@@ -1,14 +1,17 @@
 
 import './App.css'
-import ProfileSideBar from './components/ProfileSideBar'
+import LinkedInAdCard from './components/adsection/ad-section'
+import LinkedInFooter from './components/footer/footer'
+import PostSection from './components/PosteSection/PostSection'
 
 function App() {
  
 
   return (
    <>
-   <h1 className=''>Layout</h1>
-   <ProfileSideBar></ProfileSideBar>
+   <PostSection/>
+   <LinkedInAdCard/>
+   <LinkedInFooter/>
    </>
   )
 }
