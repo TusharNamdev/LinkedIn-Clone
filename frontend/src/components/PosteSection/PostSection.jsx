@@ -10,7 +10,7 @@ const PostSection = () => {
       {
         id: 1,
         user: {
-          name: "John Doe",
+          name: "Ramesh Verma",
           title: "Software Engineer at ExampleCorp",
           avatar: "https://placehold.co/40x40/FF5733/FFFFFF?text=JD",
         },
@@ -24,7 +24,7 @@ const PostSection = () => {
       {
         id: 2,
         user: {
-          name: "Jane Smith",
+          name: "Suman Sharma",
           title: "Product Manager at InnovateTech",
           avatar: "https://placehold.co/40x40/33FF57/FFFFFF?text=JS",
         },
@@ -39,7 +39,7 @@ const PostSection = () => {
       {
         id: 3,
         user: {
-          name: "Alice Johnson",
+          name: "Eshani Kumar",
           title: "Data Scientist at Global Insights",
           avatar: "https://placehold.co/40x40/5733FF/FFFFFF?text=AJ",
         },
@@ -63,12 +63,12 @@ const PostSection = () => {
           avatar: "https://placehold.co/40x40/33AACC/FFFFFF?text=You",
         },
         content: newPostContent,
-        image: null, 
+        image: null,
         likes: 0,
         comments: 0,
         time: "Just now",
       };
-      setPosts([newPost, ...posts]); 
+      setPosts([newPost, ...posts]);
       setNewPostContent("");
       setShowModal(false);
     }
@@ -76,9 +76,9 @@ const PostSection = () => {
 
   return (
     <section className=" w-full">
-      <main className="container mx-auto mt-16 py-6 px-4 max-w-6xl">
+      <main className=" container mx-auto mt-2   py-6 px-4 max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          <section className="md:col-span-3 lg:col-span-3 space-y-4">
+          <section className=" md:col-span-3 lg:col-span-5 space-y-4">
             <CreatePost openModal={() => setShowModal(true)} />
             {posts.map((post) => (
               <Post key={post.id} post={post} />
@@ -132,7 +132,7 @@ const CreatePost = ({ openModal }) => (
   <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
     <div className="flex items-center space-x-3 mb-4">
       <img
-        src="https://placehold.co/50x50/ADD8E6/000000?text=P" // Placeholder for user's avatar
+        src="https://placehold.co/50x50/ADD8E6/000000?text=P"
         alt="User Avatar"
         className="rounded-full w-12 h-12 object-cover"
       />
@@ -143,7 +143,7 @@ const CreatePost = ({ openModal }) => (
         Start a post
       </button>
     </div>
-    <div className="flex justify-around text-sm text-gray-600">
+    <div className="flex flex-wrap justify-around text-sm text-gray-600">
       <button className="flex items-center space-x-1 p-2 rounded-md hover:bg-gray-100 transition-colors">
         <svg
           className="w-5 h-5 text-blue-600"
@@ -193,8 +193,8 @@ const CreatePost = ({ openModal }) => (
 );
 
 const Post = ({ post }) => (
-  <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
-    {/* Post Header */}
+  <div className=" bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+
     <div className="flex items-center space-x-3 mb-3">
       <img
         src={post.user.avatar}
@@ -203,7 +203,7 @@ const Post = ({ post }) => (
         onError={(e) => {
           e.target.onerror = null;
           e.target.src = "https://placehold.co/40x40/CCCCCC/666666?text=U";
-        }} // Fallback
+        }}
       />
       <div>
         <h4 className="font-semibold text-gray-800 hover:text-blue-700 hover:underline cursor-pointer">
@@ -219,7 +219,7 @@ const Post = ({ post }) => (
       </div>
     </div>
 
-    {/* Post Content */}
+
     <p className="text-gray-800 mb-3">{post.content}</p>
     {post.image && (
       <img
@@ -230,15 +230,15 @@ const Post = ({ post }) => (
           e.target.onerror = null;
           e.target.src =
             "https://placehold.co/600x300/CCCCCC/666666?text=Image+Load+Error";
-        }} // Fallback
+        }}
       />
     )}
 
-    {/* Likes and Comments */}
-    <div className="flex items-center text-sm text-gray-600 border-b border-gray-200 pb-2 mb-2">
+
+    <div className="  flex items-center text-sm text-gray-600 border-b border-gray-200 pb-2 mb-2">
       {post.likes > 0 && (
         <div className="flex items-center space-x-1 mr-4">
-          {/* Simple like icon - can be an SVG */}
+
           <span className="text-blue-600">👍</span>
           <span>{post.likes}</span>
         </div>
@@ -246,8 +246,8 @@ const Post = ({ post }) => (
       {post.comments > 0 && <span>{post.comments} comments</span>}
     </div>
 
-    {/* Action Buttons */}
-    <div className="flex justify-around text-gray-600 font-medium text-sm">
+
+    <div className=" flex-wrap  flex justify-around text-gray-600 font-medium text-sm">
       <button className="flex items-center space-x-1 p-2 rounded-md hover:bg-gray-100 transition-colors flex-grow justify-center">
         <svg
           className="w-5 h-5"
