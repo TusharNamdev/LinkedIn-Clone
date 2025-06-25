@@ -77,7 +77,7 @@ const PostSection = () => {
   return (
     <section className=" w-full">
       <main className=" container mx-auto mt-2   py-6 px-4 max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:col-span-6 lg:grid-cols-5 gap-6">
           <section className=" md:col-span-3 lg:col-span-5 space-y-4">
             <CreatePost openModal={() => setShowModal(true)} />
             {posts.map((post) => (
@@ -123,7 +123,6 @@ const PostSection = () => {
           </div>
         </div>
       )}
-      );
     </section>
   );
 };

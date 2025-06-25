@@ -18,7 +18,7 @@ export default function Navbar() {
     <>
       <nav className="bg-white text-gray-800 px-4 py-2 shadow-sm border-b">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Left Side */}
+
           <div className="flex items-center gap-3">
             <FaLinkedin className="text-blue-700 text-3xl" />
             <div className="relative hidden sm:flex">
@@ -31,7 +31,6 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Center Nav Items */}
           <div className="hidden md:flex items-center gap-6 text-sm">
             <NavItem icon={<FaHome />} label="Home" active />
             <NavItem icon={<FaUserFriends />} label="My Network" />
@@ -51,7 +50,6 @@ export default function Navbar() {
             />
           </div>
 
-          {/* Right Side */}
           <div className="hidden lg:flex items-center gap-4 text-sm">
             <NavItem icon={<FaTh />} label="For Business" dropdown />
             <button className="text-yellow-600 font-semibold whitespace-nowrap">
@@ -59,14 +57,13 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
+       
           <div className="md:hidden z-50 cursor-pointer" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <HiX className="text-2xl" /> : <HiOutlineMenu className="text-2xl" />}
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-md border-b text-gray-700 px-4 py-3 space-y-4">
           <MobileItem icon={<FaHome />} label="Home" />
